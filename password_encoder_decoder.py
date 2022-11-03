@@ -1,6 +1,8 @@
 #Matthew Miles
 #password decoder/encoder
 
+
+# new change to the code
 #converts digit to decoded digit
 def decode_conversion(digit):
     decode_map = {
