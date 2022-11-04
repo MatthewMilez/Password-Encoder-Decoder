@@ -36,9 +36,22 @@ def encode(string):
 
     return result_string
 
+# function for menu option 2:
+# decodes each individual digit and adds to res string, returns res
+def decode(password):
+    res = ''
+    for char in password:
+        res += str((int(char) + 7) % 10)
+    return res
+
 #main dunder
 if __name__ == '__main__':
+
     running = True
+
+    # when a password is encoded, it is stored into the below variable for use in option 2
+    encode_password = ''
+
     #print menu prompt
     while running:
         print("Menu")
@@ -55,7 +68,8 @@ if __name__ == '__main__':
 
         #decode password
         elif option == 2:
-            pass
+            decoded_password = decode(encode_password)
+            print(f'The encoded password is {encode_password}, and the original password is {decoded_password}.')
 
         #exits the program
         elif option == 3:
